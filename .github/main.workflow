@@ -25,7 +25,7 @@ action "Build" {
 
 # `firebase deploy`
 action "Deploy" {
-  uses = "natemoo-re/action-firebase@master"
+  uses = "vinothpandian/metamorph-gui@master"
   args = "deploy"
   secrets = ["FIREBASE_TOKEN"]
   needs = ["Build"]
