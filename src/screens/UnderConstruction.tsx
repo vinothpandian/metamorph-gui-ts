@@ -5,7 +5,12 @@ const background = require("../assets/images/metamorph_under_construction.svg");
 
 function UnderConstruction() {
   return (
-    <Flex height="100vh" justifyContent="center">
+    <Flex
+      height="100vh"
+      justifyContent="center"
+      alignItems="center"
+      direction="column"
+    >
       <Flex
         width={["100vw", "100vw", "90vw", "75vw"]}
         height="100vh"
@@ -18,10 +23,15 @@ function UnderConstruction() {
           src={background}
           alt="Under Construction"
         />
-        <Heading as="h1" fontSize={["1.5rem", "2rem"]} fontWeight={400}>
-          Under Construction
-        </Heading>
       </Flex>
+      <Heading
+        as="h1"
+        textAlign="center"
+        fontSize={["1.625rem"]}
+        fontWeight={400}
+      >
+        Under Construction
+      </Heading>
     </Flex>
   );
 }
