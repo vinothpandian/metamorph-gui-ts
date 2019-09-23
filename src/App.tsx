@@ -1,14 +1,18 @@
 import React from "react";
 import "./App.scss";
+import { theme, ThemeProvider, CSSReset } from "@chakra-ui/core";
 
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./routes";
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <CSSReset />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };
 
