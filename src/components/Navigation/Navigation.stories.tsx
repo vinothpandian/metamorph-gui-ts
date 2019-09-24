@@ -1,6 +1,29 @@
 import { storiesOf } from "@storybook/react";
 
 import * as React from "react";
+import { Box } from "@chakra-ui/core";
 import Navigation from ".";
 
-storiesOf("Navigation", module).add("with text", () => <Navigation />);
+storiesOf("Navigation", module)
+  .addDecorator(story => (
+    <Box p="5">
+      {story()}
+      {Array.from(Array(10).keys()).map(v => {
+        return (
+          <p key={v}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+            explicabo corporis fuga beatae esse adipisci nesciunt recusandae
+            quis quos atque nobis eaque culpa assumenda ipsam ea dicta, illum
+            vel alias. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Facere explicabo corporis fuga beatae esse adipisci nesciunt
+            recusandae quis quos atque nobis eaque culpa assumenda ipsam ea
+            dicta, illum vel alias. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Facere explicabo corporis fuga beatae esse
+            adipisci nesciunt recusandae quis quos atque nobis eaque culpa
+            assumenda ipsam ea dicta, illum vel alias.
+          </p>
+        );
+      })}
+    </Box>
+  ))
+  .add("with text", () => <Navigation />);

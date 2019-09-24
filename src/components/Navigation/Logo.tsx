@@ -8,7 +8,7 @@ const Logo = () => {
       justifyContent="center"
       alignItems="center"
       fontFamily="Roboto Mono"
-      fontSize="3rem"
+      fontSize={["2.5rem", "3rem"]}
       fontWeight="thin"
     >
       <Text as="span" pl={3}>

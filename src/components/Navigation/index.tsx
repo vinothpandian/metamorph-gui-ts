@@ -11,10 +11,12 @@ const Navigation: React.FC<{}> = () => {
   };
 
   return (
-    <>
+    <Flex width="100%" direction="column" position="sticky" top={0} left={0}>
       <Flex
+        zIndex={99999}
+        bg="white"
         w="100%"
-        px={5}
+        px={[2, 5]}
         py={4}
         justifyContent="space-between"
         alignItems="center"
@@ -47,7 +49,9 @@ const Navigation: React.FC<{}> = () => {
       <Collapse display={["flex", "flex", "flex", "none"]} isOpen={showNav}>
         <Flex
           w="100%"
-          pl="2rem"
+          bg="white"
+          px={5}
+          pb="2rem"
           direction="column"
           fontSize={["1.25rem", "1.5rem"]}
           fontWeight="light"
@@ -66,7 +70,7 @@ const Navigation: React.FC<{}> = () => {
           </Link>
         </Flex>
       </Collapse>
-    </>
+    </Flex>
   );
 };
 

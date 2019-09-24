@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Box } from "@chakra-ui/core";
+import { PseudoBox } from "@chakra-ui/core";
+import styled from "@emotion/styled";
 
 type LinkProps = {
   exact?: boolean;
@@ -9,10 +10,16 @@ type LinkProps = {
   children: string;
 };
 
+const StyledNavLink = styled(NavLink)({
+  "&:hover": {
+    color: "#db9b08"
+  }
+});
+
 const Link: React.FC<LinkProps> = ({ exact, to, onClick, children }) => {
   return (
-    <Box pr={["2.5rem", "2rem"]}>
-      <NavLink
+    <PseudoBox pr={["2.5rem", "2rem"]}>
+      <StyledNavLink
         to={to}
         exact={exact}
         activeStyle={{
@@ -21,8 +28,8 @@ const Link: React.FC<LinkProps> = ({ exact, to, onClick, children }) => {
         onClick={onClick}
       >
         {children}
-      </NavLink>
-    </Box>
+      </StyledNavLink>
+    </PseudoBox>
   );
 };
 
