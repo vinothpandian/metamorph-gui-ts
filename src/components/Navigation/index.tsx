@@ -20,7 +20,7 @@ const Navigation: React.FC<{}> = () => {
         alignItems="center"
       >
         <Logo />
-        <Flex>
+        <Flex display={["flex", "flex", "flex", "none"]}>
           <Box onClick={toggleNav}>
             {/* TODO: Remove temp workaround for IconButton onClick */}
             <IconButton
@@ -31,8 +31,20 @@ const Navigation: React.FC<{}> = () => {
             />
           </Box>
         </Flex>
+        <Flex
+          display={["none", "none", "none", "flex"]}
+          fontSize="1.5rem"
+          fontWeight="light"
+        >
+          <Link exact to="/try-it-out">
+            Try it out!
+          </Link>
+          <Link to="/contribute">Contribute</Link>
+          <Link to="/verify-our-data">Verify our data</Link>
+          <Link to="/about-us">About Us</Link>
+        </Flex>
       </Flex>
-      <Collapse isOpen={showNav}>
+      <Collapse display={["flex", "flex", "flex", "none"]} isOpen={showNav}>
         <Flex
           w="100%"
           pl="2rem"

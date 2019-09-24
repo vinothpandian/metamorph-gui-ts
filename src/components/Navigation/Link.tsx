@@ -5,7 +5,7 @@ import { Box } from "@chakra-ui/core";
 type LinkProps = {
   exact?: boolean;
   to: string;
-  onClick: () => void;
+  onClick?: () => void;
   children: string;
 };
 
