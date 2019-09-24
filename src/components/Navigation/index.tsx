@@ -50,7 +50,7 @@ const Navigation: React.FC<{}> = () => {
         <Flex
           w="100%"
           bg="white"
-          px={5}
+          px={[5, 8]}
           pb="2rem"
           direction="column"
           fontSize={["1.25rem", "1.5rem"]}

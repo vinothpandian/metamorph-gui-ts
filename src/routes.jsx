@@ -1,12 +1,12 @@
 import React from "react";
 import { Switch, Route } from "react-router";
 import Error from "./screens/Error";
-import UnderConstruction from "./screens/UnderConstruction";
+import Home from "./screens/Home";
 
 function Routes() {
   return (
     <Switch>
-      <Route path="/" component={UnderConstruction} />
+      <Route path="/" component={Home} />
       <Route component={Error} />
     </Switch>
   );
