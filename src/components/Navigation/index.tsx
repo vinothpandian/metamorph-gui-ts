@@ -1,60 +1,60 @@
 import React from "react";
-import { Flex, Text, Box } from "@chakra-ui/core";
-import { NavLink } from "react-router-dom";
-
-const Link: React.FC<{ to: string; children: string; exact?: boolean }> = ({
-  exact,
-  to,
-  children
-}) => {
-  return (
-    <Box pr="2rem">
-      <NavLink
-        to={to}
-        exact={exact}
-        activeStyle={{
-          color: "#87A330"
-        }}
-      >
-        {children}
-      </NavLink>
-    </Box>
-  );
-};
+import { Flex, Box, Collapse, IconButton } from "@chakra-ui/core";
+import Link from "./Link";
+import Logo from "./Logo";
 
 const Navigation: React.FC<{}> = () => {
+  const [showNav, setShowNav] = React.useState<boolean>(false);
+
+  const toggleNav = () => {
+    setShowNav(!showNav);
+  };
+
   return (
-    <Flex
-      w="100%"
-      px={5}
-      py={4}
-      justifyContent="space-between"
-      alignItems="center"
-    >
+    <>
       <Flex
-        flexDirection="row"
-        justifyContent="center"
+        w="100%"
+        px={5}
+        py={4}
+        justifyContent="space-between"
         alignItems="center"
-        fontFamily="Roboto Mono"
-        fontSize="3rem"
-        fontWeight="thin"
       >
-        <Text as="span" pl={3}>
-          Meta
-        </Text>
-        <Text color="primary" as="span">
-          Morph
-        </Text>
+        <Logo />
+        <Flex>
+          <Box onClick={toggleNav}>
+            {/* TODO: Remove temp workaround for IconButton onClick */}
+            <IconButton
+              aria-label="Menu"
+              icon="hamburger"
+              size="lg"
+              variant="ghost"
+            />
+          </Box>
+        </Flex>
       </Flex>
-      <Flex fontSize="1.5rem" fontWeight="light">
-        <Link exact to="/try-it-out">
-          Try it out!
-        </Link>
-        <Link to="/contribute">Contribute</Link>
-        <Link to="/verify-our-data">Verify our data</Link>
-        <Link to="/about-us">About Us</Link>
-      </Flex>
-    </Flex>
+      <Collapse isOpen={showNav}>
+        <Flex
+          w="100%"
+          pl="2rem"
+          direction="column"
+          fontSize={["1.25rem", "1.5rem"]}
+          fontWeight="light"
+        >
+          <Link onClick={toggleNav} exact to="/try-it-out">
+            Try it out!
+          </Link>
+          <Link onClick={toggleNav} to="/contribute">
+            Contribute
+          </Link>
+          <Link onClick={toggleNav} to="/verify-our-data">
+            Verify our data
+          </Link>
+          <Link onClick={toggleNav} to="/about-us">
+            About Us
+          </Link>
+        </Flex>
+      </Collapse>
+    </>
   );
 };
 
