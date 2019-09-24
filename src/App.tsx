@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.scss";
-import { theme, ThemeProvider, CSSReset } from "@chakra-ui/core";
+import { ThemeProvider, CSSReset } from "@chakra-ui/core";
 
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./routes";
+import theme from "./theme";
 
 const App: React.FC = () => {
   return (

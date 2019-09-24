@@ -1,8 +1,15 @@
 import React from 'react';
 
 import { configure, addDecorator } from '@storybook/react';
-import { ThemeProvider, CSSReset, Flex } from '@chakra-ui/core';
 
+import { addParameters } from '@storybook/react';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+
+import { ThemeProvider, CSSReset, Flex } from '@chakra-ui/core';
+import { MemoryRouter } from 'react-router-dom';
+import theme from '../src/theme';
+
+import './styles.scss';
 const req = require.context('../src/components', true, /.stories.tsx$/);
 
 function loadStories() {
@@ -11,13 +18,19 @@ function loadStories() {
 
 const AppProvider = ({ children }) => {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
       <CSSReset />
-      {children}
+      <MemoryRouter>{children}</MemoryRouter>
     </ThemeProvider>
   );
 };
 
 addDecorator(story => <AppProvider>{story()}</AppProvider>);
+
+addParameters({
+  viewport: {
+    viewports: INITIAL_VIEWPORTS
+  }
+});
 
 configure(loadStories, module);
