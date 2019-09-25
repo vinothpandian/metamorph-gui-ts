@@ -11,9 +11,8 @@ const Navigation: React.FC<{}> = () => {
   };
 
   return (
-    <Flex width="100%" direction="column" position="sticky" top={0} left={0}>
+    <Flex width="100%" direction="column">
       <Flex
-        zIndex={99999}
         bg="white"
         w="100%"
         px={[2, 5]}
