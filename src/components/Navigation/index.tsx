@@ -1,5 +1,6 @@
 import React from "react";
-import { Flex, Box, Collapse, IconButton } from "@chakra-ui/core";
+import { Box, Collapse, IconButton } from "@material-ui/core";
+import Menu from "@material-ui/icons/Menu";
 import Link from "./Link";
 import Logo from "./Logo";
 
@@ -11,28 +12,23 @@ const Navigation: React.FC<{}> = () => {
   };
 
   return (
-    <Flex width="100%" direction="column">
-      <Flex
-        bg="white"
-        w="100%"
+    <Box display="flex" width="100%" flexDirection="column">
+      <Box
+        display="flex"
+        bgcolor="white"
+        width="100%"
         px={[2, 5]}
-        py={4}
+        py={1}
         justifyContent="space-between"
         alignItems="center"
       >
         <Logo />
-        <Flex display={["flex", "flex", "flex", "none"]}>
-          <Box onClick={toggleNav}>
-            {/* TODO: Remove temp workaround for IconButton onClick */}
-            <IconButton
-              aria-label="Menu"
-              icon="hamburger"
-              size="lg"
-              variant="ghost"
-            />
-          </Box>
-        </Flex>
-        <Flex
+        <Box display={["flex", "flex", "flex", "none"]}>
+          <IconButton size="medium" onClick={toggleNav}>
+            <Menu />
+          </IconButton>
+        </Box>
+        <Box
           display={["none", "none", "none", "flex"]}
           fontSize="1.5rem"
           fontWeight="light"
@@ -43,15 +39,16 @@ const Navigation: React.FC<{}> = () => {
           <Link to="/contribute">Contribute</Link>
           <Link to="/verify-our-data">Verify our data</Link>
           <Link to="/about-us">About Us</Link>
-        </Flex>
-      </Flex>
-      <Collapse display={["flex", "flex", "flex", "none"]} isOpen={showNav}>
-        <Flex
-          w="100%"
-          bg="white"
+        </Box>
+      </Box>
+      <Collapse in={showNav}>
+        <Box
+          display={["flex", "flex", "flex", "none"]}
+          width="100%"
+          bgcolor="white"
           px={[5, 8]}
-          pb="2rem"
-          direction="column"
+          pb="1rem"
+          flexDirection="column"
           fontSize={["1.25rem", "1.5rem"]}
           fontWeight="light"
         >
@@ -67,9 +64,9 @@ const Navigation: React.FC<{}> = () => {
           <Link onClick={toggleNav} to="/about-us">
             About Us
           </Link>
-        </Flex>
+        </Box>
       </Collapse>
-    </Flex>
+    </Box>
   );
 };
 

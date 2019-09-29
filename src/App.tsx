@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.scss";
-import { ThemeProvider, CSSReset } from "@chakra-ui/core";
+import { ThemeProvider } from "@material-ui/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./routes";
@@ -10,7 +11,7 @@ import Navigation from "./components/Navigation";
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
-      <CSSReset />
+      <CssBaseline />
       <BrowserRouter>
         <Navigation />
         <Routes />

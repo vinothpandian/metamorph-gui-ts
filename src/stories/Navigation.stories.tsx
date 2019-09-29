@@ -1,8 +1,8 @@
 import { storiesOf } from "@storybook/react";
 
 import * as React from "react";
-import { Box } from "@chakra-ui/core";
-import Navigation from ".";
+import { Box } from "@material-ui/core";
+import Navigation from "../components/Navigation";
 
 storiesOf("Navigation", module)
   .addDecorator(story => (

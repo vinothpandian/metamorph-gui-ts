@@ -5,12 +5,14 @@ import { configure, addDecorator } from '@storybook/react';
 import { addParameters } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
-import { ThemeProvider, CSSReset, Flex } from '@chakra-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
+import { CssBaseline } from '@material-ui/core';
+
 import { MemoryRouter } from 'react-router-dom';
 import theme from '../src/theme';
 
 import './styles.scss';
-const req = require.context('../src/components', true, /.stories.tsx$/);
+const req = require.context('../src/stories', true, /.stories.tsx$/);
 
 function loadStories() {
   req.keys().forEach(req);
@@ -19,7 +21,7 @@ function loadStories() {
 const AppProvider = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      <CSSReset />
+      <CssBaseline />
       <MemoryRouter>{children}</MemoryRouter>
     </ThemeProvider>
   );
