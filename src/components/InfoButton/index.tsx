@@ -2,7 +2,6 @@ import React from "react";
 import Button, { ButtonProps } from "@material-ui/core/Button";
 
 import { makeStyles } from "@material-ui/styles";
-import { Theme } from "@material-ui/core";
 
 type InfoButtonProps = {} & ButtonProps;
 
@@ -23,7 +22,6 @@ const InfoButton: React.FC<InfoButtonProps> = ({
       color="primary"
       size="large"
       fullWidth
-      // eslint-disable-next-line react/jsx-props-no-spreading
       {...buttonProps}
     >
       {children}

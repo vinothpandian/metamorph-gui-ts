@@ -1,12 +1,11 @@
 import React from "react";
-import { Grid, Typography, Box, Theme } from "@material-ui/core";
+import { Grid, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import { ReactComponent as HomeImage } from "../../assets/images/home-image.svg";
 import SectionContainer from "../../components/SectionContainer";
 import DisplayImage from "../../components/DisplayImage";
 import Information from "../../components/Information";
 import InfoButton from "../../components/InfoButton";
-import { RouterLink } from "../../components/RouterLink";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {

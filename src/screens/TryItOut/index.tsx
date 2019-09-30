@@ -1,33 +1,10 @@
 import React from "react";
-import { Grid, Box, Theme, Button, Link } from "@material-ui/core";
+import { Grid, Box, Theme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import LinkOutlinedIcon from "@material-ui/icons/LinkOutlined";
 import SectionContainer from "../../components/SectionContainer";
 import Information from "../../components/Information";
 import InfoButton from "../../components/InfoButton";
-
-import sample0 from "../../assets/images/lofi-0.jpg";
-import sample1 from "../../assets/images/lofi-1.jpg";
-
-function getDataBlob(image: string, imageType: string): Promise<string> {
-  return new Promise<string>((resolve, reject): any => {
-    try {
-      const img: HTMLImageElement = document.createElement("img");
-      img.src = image;
-
-      img.onload = (): void => {
-        const canvas: any = document.createElement("canvas");
-        canvas.setAttribute("width", img.naturalWidth.toString());
-        canvas.setAttribute("height", img.naturalHeight.toString());
-        canvas.getContext("2d").drawImage(img, 0, 0);
-
-        resolve(canvas.toDataURL(`image/${imageType}`));
-      };
-    } catch (e) {
-      reject(e);
-    }
-  });
-}
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -58,7 +35,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const TryItOut: React.FC = () => {
   const styles = useStyles();
-  const samples = [sample0, sample1];
 
   return (
     <SectionContainer gradientBackground>

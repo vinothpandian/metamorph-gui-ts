@@ -11,18 +11,21 @@ const Navigation: React.FC<{}> = () => {
     setShowNav(!showNav);
   };
 
+  const closeNav = (): void => {
+    setShowNav(false);
+  };
+
   return (
     <Box display="flex" width="100%" flexDirection="column">
       <Box
         display="flex"
-        bgcolor="white"
         width="100%"
         px={[2, 5]}
         py={1}
         justifyContent="space-between"
         alignItems="center"
       >
-        <Logo />
+        <Logo onClick={closeNav} />
         <Box display={["flex", "flex", "flex", "none"]}>
           <IconButton size="medium" onClick={toggleNav}>
             <Menu />
@@ -45,7 +48,6 @@ const Navigation: React.FC<{}> = () => {
         <Box
           display={["flex", "flex", "flex", "none"]}
           width="100%"
-          bgcolor="white"
           px={[5, 8]}
           pb="1rem"
           flexDirection="column"

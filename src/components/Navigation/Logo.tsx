@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   }
 }));
 
-const Logo = (): React.FunctionComponentElement<{}> => {
+const Logo: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   const styles = useStyles();
 
   return (
@@ -36,7 +36,13 @@ const Logo = (): React.FunctionComponentElement<{}> => {
       justifyContent="center"
       alignItems="center"
     >
-      <Link component={RouterNavLink} to="/" exact underline="none">
+      <Link
+        component={RouterNavLink}
+        onClick={onClick}
+        to="/"
+        exact
+        underline="none"
+      >
         <Typography component="span" className={styles.meta}>
           Meta
         </Typography>
