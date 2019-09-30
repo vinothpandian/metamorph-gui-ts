@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   }
 }));
 
-const Logo = () => {
+const Logo = (): React.FunctionComponentElement<{}> => {
   const styles = useStyles();
 
   return (

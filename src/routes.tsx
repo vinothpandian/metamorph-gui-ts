@@ -3,10 +3,10 @@ import { Switch, Route } from "react-router";
 import Error from "./screens/Error";
 import Home from "./screens/Home";
 
-function Routes() {
+function Routes(): React.FunctionComponentElement<{}> {
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route exact path="/" component={Home} />
       <Route component={Error} />
     </Switch>
   );

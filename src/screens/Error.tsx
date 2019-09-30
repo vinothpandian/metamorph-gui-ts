@@ -1,24 +1,37 @@
 import React from "react";
-import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
+import { Grid, Theme } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
+import SectionContainer from "../components/SectionContainer";
 
-function Error() {
-  const padding = "3";
+const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+    height: "100%"
+  },
+  errorCode: {
+    paddingRight: theme.spacing(2),
+    marginRight: theme.spacing(2),
+    borderRight: `0.0625rem solid ${theme.palette.grey["800"]}`
+  }
+}));
+
+function Error(): React.FunctionComponentElement<{}> {
+  const styles = useStyles();
 
   return (
-    <Box
-      display="flex"
-      height="100%"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Box pr={padding} borderRight="1px solid" borderColor="gray">
-        <Typography variant="h4">404</Typography>
-      </Box>
-      <Box pl={padding}>
-        <Typography variant="body1">Page not found</Typography>
-      </Box>
-    </Box>
+    <SectionContainer>
+      <Grid
+        container
+        className={styles.root}
+        justify="center"
+        alignItems="center"
+      >
+        <Typography className={styles.errorCode} variant="h3">
+          404
+        </Typography>
+        <Typography variant="h5">Page not found</Typography>
+      </Grid>
+    </SectionContainer>
   );
 }
 

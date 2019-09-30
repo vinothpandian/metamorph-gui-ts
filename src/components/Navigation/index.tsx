@@ -7,7 +7,7 @@ import Logo from "./Logo";
 const Navigation: React.FC<{}> = () => {
   const [showNav, setShowNav] = React.useState<boolean>(false);
 
-  const toggleNav = () => {
+  const toggleNav = (): void => {
     setShowNav(!showNav);
   };
 

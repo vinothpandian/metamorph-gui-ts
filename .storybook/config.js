@@ -9,7 +9,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import { CssBaseline } from '@material-ui/core';
 
 import { MemoryRouter } from 'react-router-dom';
-import theme from '../src/theme';
+import theme from '../src/assets/theme';
 
 import './styles.scss';
 const req = require.context('../src/stories', true, /.stories.tsx$/);

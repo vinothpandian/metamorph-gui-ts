@@ -5,7 +5,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./routes";
-import theme from "./theme";
+import theme from "./assets/theme";
 import Navigation from "./components/Navigation";
 
 const App: React.FC = () => {
