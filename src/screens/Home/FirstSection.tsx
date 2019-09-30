@@ -44,10 +44,10 @@ const FirstSection: React.FC = () => {
             </Information>
           </Grid>
           <Grid item xs={12} container justify="space-around" spacing={2}>
-            <Grid item xs={6} lg={4}>
+            <Grid item xs={6} lg={5}>
               <InfoButton variant="contained">Try it out!</InfoButton>
             </Grid>
-            <Grid item xs={6} lg={4}>
+            <Grid item xs={6} lg={5}>
               <InfoButton variant="outlined">Contribute</InfoButton>
             </Grid>
           </Grid>

@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     solidBackground,
     fullPage
   }: StyleProps<boolean>): CSSProperties => ({
-    height: fullPage ? "100vh" : "calc(100vh - 4.75rem)",
+    height: fullPage ? "100vh" : "calc(100vh - 4.25rem)",
     background: gradientBackground
       ? `linear-gradient(
       180deg,
