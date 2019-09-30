@@ -1,12 +1,12 @@
 import React from "react";
 import Button, { ButtonProps } from "@material-ui/core/Button";
 
-import { makeStyles, CSSProperties } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/styles";
 import { Theme } from "@material-ui/core";
 
 type InfoButtonProps = {} & ButtonProps;
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   button: {
     borderRadius: "1.25rem"
   }

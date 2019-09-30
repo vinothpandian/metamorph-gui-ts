@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
 import { makeStyles, Typography, Theme, Link } from "@material-ui/core";
-import RouterLink from "./RouterLink";
+import { RouterNavLink } from "../RouterLink";
 
 const useStyles = makeStyles((theme: Theme) => ({
   common: {
@@ -36,7 +36,7 @@ const Logo = (): React.FunctionComponentElement<{}> => {
       justifyContent="center"
       alignItems="center"
     >
-      <Link component={RouterLink} to="/" exact underline="none">
+      <Link component={RouterNavLink} to="/" exact underline="none">
         <Typography component="span" className={styles.meta}>
           Meta
         </Typography>

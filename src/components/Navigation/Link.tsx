@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as MLink, Theme, useTheme } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
-import RouterLink from "./RouterLink";
+import { RouterNavLink as RouterLink } from "../RouterLink";
 
 type LinkProps = {
   exact?: boolean;
